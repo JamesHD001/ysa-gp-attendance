@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login - YSA GP</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login - YSA GP</title>
+        <link rel="stylesheet" href="/assets/css/login.css">
+    </head>
+    <body>
 
-<main class="login-container">
-    <h2>Login - YSA GP</h2>
+        <header class="header">
+            <div class="header-top">
+                <div class="header-left">
+                    <img src="assets/img/footer-logo.png" alt="Church Logo">
+                </div>
 
-    <label>Username</label>
-    <input type="text" id="username" placeholder="Enter username" required>
+                <div class="header-center">
+                    <h1>
+                        The Church Of Jesus Christ Of Latter-day Saints<br>
+                        Ijebu-Ode Nigeria Stake
+                    </h1>
+                </div>
+            </div>
+            </header>
+        <main class="login-container">
+            <h2>Login - YSA GP</h2>
 
-    <label>Password</label>
-    <input type="password" id="password" placeholder="Enter password" required>
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter username" required>
 
-    <button onclick="login()">Login</button>
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password" required>
 
-    <p id="error" class="error"></p>
-</main>
+            <button onclick="login()">Login</button>
 
-<script src="js/auth.js"></script>
-</body>
+            <p id="error" class="error"></p>
+        </main>
+
+        <footer class="footer">
+            <p>
+                The Church Of Jesus Christ Of Latter-day Saints <br>
+                Ijebu-Ode Nigeria Stake — YSA Gathering Place
+            </p>
+            <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
+        </footer>
+        <script src="js/login.js"></script>
+        <script src="js/auth.js"></script>
+    </body>
 </html>
