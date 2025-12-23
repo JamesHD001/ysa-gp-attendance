@@ -74,9 +74,12 @@ body {
 
 .nav a:hover {
     text-decoration: none;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 1.5px solid #ffffff;
     padding-bottom: 4px;
-    transform: scale(1.0) ease;
+    transform: scale(1.15);
+    border-radius: 9px;
+    border: border-box;
+    border: 1.5px solid #ffffff;
 }
 
 .nav a.active {
