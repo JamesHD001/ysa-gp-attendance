@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+.header {
+    background: #4c7cff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+
+.header-left img {
+    height: 55px;
+}
+
+.header-center {
+    text-align: center;
+    flex: 1;
+}
+
+.header-center h1 {
+    font-size: 18px;
+    color: #1e3a8a;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logout-btn {
+    background: #2644dc;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
+.nav {
+    background: #1e3a8a;
+    padding: 10px 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.nav a.active {
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 4px;
+    text-decoration: none;
+}
+
+/* @media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+} */
+
+.main-dashboard-container {
+    background: #e9edf2;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.dashboard-content h2 {
+    color: #1e3a8a;
+    font-size: 1.6rem;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px 20px;
+}
+
+.dashboard-containers {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+main {
+    padding: 20px;
+}
+
+.attendance-form,
+.attendance-list {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    background: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+button:hover {
+    background: #162c6b;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.breadcrumb {
+    background: #f1f5f9;
+    padding: 10px 25px;
+    font-size: 14px;
+    color: #1e3a8a;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.attendance-records {
+    margin-top: 20px;
+}
+
+.record-item {
+    background: #f8fafc;
+    border-left: 4px solid #1e3a8a;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.record-item strong {
+    color: #1e3a8a;
+}
+
+.record-meta {
+    font-size: 14px;
+    color: #555;
+}
+
+.radio{
+    margin-right: 8px;
+    display: inline-block;
+    
+}
+.footer {
+    background: #4c7cff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-logo {
+    width: 50px;
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header-right {
+        justify-content: center;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YSA GP Attendance - Dashboard</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header / Branding -->
+<header class="header">
+
+    <div class="header-top">
+
+        <!-- Left: Image Logo -->
+        <div class="header-left">
+            <img src="assets/img/footer-logo.png" alt="Church Logo" class="logo-img">
+        </div>
+
+        <!-- Center: Text Logo -->
+        <div class="header-center">
+            <h1>
+                The Church Of Jesus Christ Of Latter-day Saints<br>
+                Ijebu-Ode Nigeria Stake
+            </h1>
+        </div>
+
+        <!-- Right: User Info -->
+        <div class="header-right user-info">
+            <span>Admin</span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="attendance.html">Record</a>
+        <a href="weekly.html">Weekly</a>
+        <a href="monthly.html">Monthly</a>
+        <a href="summary.html">Summary</a>
+    </nav>
+    <div class="breadcrumb">
+        <a href="index.html">Dashboard</a> › <span>Home</span>
+    </div>
+
+</header>
+
+    <!-- Main Dashboard Intro -->
+    <section class="main-dashboard-container">
+        <div class="dashboard-content">
+            <h2>Welcome to the YSA GP Attendance Dashboard</h2>
+            <p>Track and manage attendance for YSA Gathering Place Classes.</p>
+        </div>
+    </section>
+
+    <!-- Stats / Panels -->
+    <section class="stats-row">
+
+        <!-- Summary Stats -->
+        <div class="dashboard-containers">
+            <div class="summary-stats" id="summary-stats">
+                <h3>Attendance Summary</h3>
+                <p>Total Records: <span id="totalRecords">0</span></p>
+            </div>
+        </div>
+
+        <!-- Next Class -->
+        <div class="dashboard-containers">
+            <div class="next-class-details" id="next-class-details">
+                <h3>Next Gathering</h3>
+                <p>Date: <strong>Coming Soon</strong></p>
+                <p>Time: <strong>TBD</strong></p>
+            </div>
+        </div>
+
+        <!-- Motivation -->
+        <div class="dashboard-containers">
+            <div class="motivation-panel" id="motivation-panel">
+                <h3>Stay Motivated</h3>
+                <p>"Small and simple things bring about great things."</p>
+            </div>
+        </div>
+
+        <div class="dashboard-containers">
+            <div class="mark-attendance" id="markAttendance">
+                <h3>Record Attendance</h3>
+                <p><a href="attendance.html">Register Today's Attendance</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>
+            The Church Of Jesus Christ Of Latter-day Saints <br>
+            Ijebu-Ode Nigeria Stake — YSA Gathering Place
+        </p>
+        <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
+    </footer>
+
+    <script src="scripts/auth.js"></script>
+    <script>
+        protectPage();
+    </script>
+    <script src="scripts/app.js"></script>
+
+</body>
+</html>

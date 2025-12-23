@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Weekly Attendance</title>
+        <link rel="stylesheet" href="/assets/css/styles.css">
+    </head>
+    <body>
+
+        <header class="header">
+            <div class="header-top">
+                <div class="header-left">
+                    <img src="assets/img/footer-logo.png" alt="Church Logo">
+                </div>
+
+                <div class="header-center">
+                    <h1>
+                        The Church Of Jesus Christ Of Latter-day Saints<br>
+                        Ijebu-Ode Nigeria Stake
+                    </h1>
+                </div>
+
+                <div class="header-right">
+                    <span>Admin</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="index.html">Dashboard</a>
+            <a href="attendance.html">Record</a>
+            <a href="weekly.html" class="active">Weekly Attendance</a>
+            <a href="monthly.html">Monthly</a>
+            <a href="summary.html">Summary</a>
+        </nav>
+
+        <div class="breadcrumb">
+            <a href="index.html">Dashboard</a> › <span>Weekly Attendance</span>
+        </div>
+
+        <main>
+            <section class="attendance-form">
+                <form id="weeklyAttendanceForm">
+                    <h2>YSA Gathering Place – Record Weekly Attendance</h2>
+
+                    <label for="attendance-date">Date</label>
+                    <input type="date" id="attendance-date" name="attendanceDate" required>
+
+                    <label for="class-name">Class</label>
+                    <select id="class-name" name="className" required>
+                        <option value="">-- Select Class --</option>
+                        <option value="ict">I.C.T Class</option>
+                        <option value="catering">Catering Class</option>
+                        <option value="tailoring">Tailoring / Fashion Class</option>
+                        <option value="barbing">Barbing Class</option>
+                        <option value="hair_makeup">Hair Making / Makeup Class</option>
+                        <option value="institute">Institute Class</option>
+                        <option value="family_history">Family History & Temple Preparatory Class</option>
+                        <option value="mission_prep">Mission Preparatory Class</option>
+                    </select>
+
+                    <label for="attendance-count">Attendance Count</label>
+                    <input type="number" id="attendance-count" name="attendanceCount" min="0" placeholder="Enter this week's attendance" required>
+
+                    <button id="saveAttendanceBtn">Save Attendance</button>
+                </form>
+
+                <p class="success-message" id="successMsg" style="display:none;">
+                    Attendance saved successfully.
+                </p>
+                <br>
+                <hr>
+
+                <h3>Saved Attendance Records</h3>
+
+                <div id="attendanceRecords" class="attendance-records">
+                    <p>No attendance records to show.</p>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <img src="assets/img/footer-logo.png" class="footer-logo">
+            <p>© 2025 YSA Gathering Place | Ijebu-Ode Nigeria Stake</p>
+        </footer>
+        <script src="js/weekly.js"></script>
+    </body>
+</html>
