@@ -22,6 +22,6 @@ function logout() {
 function protectPage() {
     const loggedIn = localStorage.getItem("isAdminLoggedIn");
     if (!loggedIn) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 }
