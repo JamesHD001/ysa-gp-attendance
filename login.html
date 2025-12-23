@@ -1,52 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Login - YSA GP</title>
-        <link rel="stylesheet" href="/assets/css/login.css">
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Login - YSA GP</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
 
-        <header class="header">
-            <div class="header-top">
-                <div class="header-left">
-                    <img src="assets/img/footer-logo.png" alt="Church Logo">
-                </div>
+<header class="header">
+    <div class="header-top">
+        <div class="header-left">
+            <img src="assets/img/footer-logo.png" alt="Church Logo">
+        </div>
+        <div class="header-center">
+            <h1>
+                The Church Of Jesus Christ Of Latter-day Saints<br>
+                Ijebu-Ode Nigeria Stake
+            </h1>
+        </div>
+    </div>
+</header>
 
-                <div class="header-center">
-                    <h1>
-                        The Church Of Jesus Christ Of Latter-day Saints<br>
-                        Ijebu-Ode Nigeria Stake
-                    </h1>
-                </div>
-            </div>
-            </header>
-        <main class="login-container">
-            <h2 class="welcome-msg">Welcome Back!</h2>
-            <p class="welcome-p">Please enter your credentials to access the attendance dashboard.</p>
-            <form>
-                <label>Username</label>
-                <input type="text" id="username" placeholder="Enter username" required>
+<main class="login-container">
+    <h2 class="welcome-msg">Welcome Back!</h2>
+    <p class="welcome-p">Please enter your credentials to access the attendance dashboard.</p>
 
-                <label>Password</label>
-                <input type="password" id="password" placeholder="Enter password" required>
-                <p id="error" class="error"></p>
-            </form>
-            <button type="button" id="login" onclick="login(event)">Login</button>
-            
-        </main>
+    <!-- IMPORTANT: onsubmit -->
+    <form id="loginForm">
+        <label>Username</label>
+        <input type="text" id="username" required>
 
-        <footer class="footer">
-            <p>
-                The Church Of Jesus Christ Of Latter-day Saints <br>
-                Ijebu-Ode Nigeria Stake — YSA Gathering Place
-            </p>
-            <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
-        </footer>
-        <script src="js/auth.js"></script>
-    </body>
+        <label>Password</label>
+        <input type="password" id="password" required>
+
+        <p id="error" class="error"></p>
+
+        <button type="submit">Login</button>
+    </form>
+</main>
+
+<footer class="footer">
+    <p>
+        The Church Of Jesus Christ Of Latter-day Saints <br>
+        Ijebu-Ode Nigeria Stake — YSA Gathering Place
+    </p>
+    <img src="assets/img/footer-logo.png" class="footer-logo">
+</footer>
+
+<script src="js/auth.js"></script>
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const errorElem = document.getElementById("error");
+
+        // Simple hardcoded authentication for demonstration
+        if (username === "admin" && password === "password123") {
+            localStorage.setItem("isAdminLoggedIn", "true");
+            window.location.href = "index.html";
+        } else {
+            errorElem.textContent = "Invalid username or password.";
+        }
+    });
+</script>
+</body>
 </html>

@@ -1,7 +1,14 @@
 const ADMIN_USER = "admin";
 const ADMIN_PASS = "ysaGP2025";
 
-/* LOGIN */
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("loginForm");
+
+    if (form) {
+        form.addEventListener("submit", login);
+    }
+});
+
 function login(event) {
     event.preventDefault();
 
@@ -11,22 +18,19 @@ function login(event) {
 
     if (username === ADMIN_USER && password === ADMIN_PASS) {
         localStorage.setItem("isAdminLoggedIn", "true");
-        window.location.replace("index.html"); // prevents back-button issues
+        window.location.href = "index.html";
     } else {
         error.textContent = "Invalid admin credentials";
     }
 }
 
-/* LOGOUT */
 function logout() {
     localStorage.removeItem("isAdminLoggedIn");
-    window.location.replace("login.html");
+    window.location.href = "login.html";
 }
 
-/* PAGE PROTECTION */
 function protectPage() {
-    const loggedIn = localStorage.getItem("isAdminLoggedIn");
-    if (loggedIn !== "true") {
-        window.location.replace("login.html");
+    if (localStorage.getItem("isAdminLoggedIn") !== "true") {
+        window.location.href = "login.html";
     }
 }
