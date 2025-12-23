@@ -1,123 +1,123 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mark Attendance - YSA GP</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mark Attendance - YSA GP</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
 
-<body>
+    <body>
 
-<header class="header">
+        <header class="header">
 
-    <div class="header-top">
-        <div class="header-left">
-            <img src="assets/img/footer-logo.png" alt="Church Logo">
+            <div class="header-top">
+                <div class="header-left">
+                    <img src="assets/img/footer-logo.png" alt="Church Logo">
+                </div>
+
+                <div class="header-center">
+                    <h1>
+                        The Church Of Jesus Christ Of Latter-day Saints<br>
+                        Ijebu-Ode Nigeria Stake
+                    </h1>
+                </div>
+
+                <div class="header-right">
+                    <span>Admin</span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+
+        </header>
+        <nav class="nav">
+                <a href="index.html">Dashboard</a>
+                <a href="attendance.html" class="active">Record Attendance</a>
+                <a href="weekly.html">Weekly</a>
+                <a href="monthly.html">Monthly</a>
+                <a href="summary.html">Summary</a>
+            </nav>
+        <div class="breadcrumb">
+            <a href="index.html">Dashboard</a> › <span>Record Attendance</span>
         </div>
+        <main>
 
-        <div class="header-center">
-            <h1>
+            <!-- Attendance Form -->
+            <section class="attendance-form">
+                <h2>Mark Attendance</h2>
+
+                <label for="attendance-date">Date</label>
+                <input type="date" id="attendance-date" required>
+
+                <label for="attendance-name">Member Name</label>
+                <input type="text" id="attendance-name" placeholder="Enter full name: First-name Last-name" required>
+
+                <label for="membership">Membership Status</label>
+                <select id="membership" required>
+                    <option value="">-- Select Membership Status --</option>
+                    <option value="member">Member</option>
+                    <option value="non-member">Non-Member</option>
+                </select>
+
+                <label for="class-attended">Class Attended</label>
+                <select id="class-attended" placeholder="Choose Class" required>
+                    <option value="">-- Select Class --</option>
+                    <option value="ict">I.C.T Class</option>
+                    <option value="catering">Catering Class</option>
+                    <option value="tailoring">Tailoring / Fashion Class</option>
+                    <option value="barbing">Barbing Class</option>
+                    <option value="hair_makeup">Hair Making / Makeup Class</option>
+                    <option value="institute">Institute Class</option>
+                    <option value="family_history">Family History & Temple Preparatory Class</option>
+                    <option value="mission_prep">Mission Preparatory Class</option>
+                </select>
+
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" placeholder="Enter student's phone number" required>
+
+                <label for="is-student-registered-for-BYU">Is student registered for BYU Pathway?</label>
+                <select id="is-student-registered-for-BYU" required>
+                    <option value="">-- Select Option --</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="attendance-status">Status</label>
+                <select id="attendance-status" required>
+                    <option value="">-- Select Status --</option>
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="Late">Late</option>
+                </select>
+                <p id="error" class="error"></p>
+                <button onclick="saveAttendance(event)">Save Attendance</button>
+            </section>
+
+            <!-- Attendance List -->
+            <section class="attendance-list">
+                <h2>Today's Attendance</h2>
+                <ul id="attendanceList"></ul>
+                <p id="noRecordsMsg">No attendance records to show.</p>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p>
                 The Church Of Jesus Christ Of Latter-day Saints<br>
-                Ijebu-Ode Nigeria Stake
-            </h1>
-        </div>
+                Ijebu-Ode Nigeria Stake — YSA Gathering Place
+            </p>
+            <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
+        </footer>
+        <script src="scripts/attendance.js"></script>
+        <script src="scripts/auth.js"></script>
+        <script>
+            protectPage();
+        </script>
+        <script src="scripts/app.js"></script>
 
-        <div class="header-right">
-            <span>Admin</span>
-            <button class="logout-btn" onclick="logout()">Logout</button>
-        </div>
-    </div>
-
-</header>
-<nav class="nav">
-        <a href="index.html">Dashboard</a>
-        <a href="attendance.html" class="active">Record Attendance</a>
-        <a href="weekly.html">Weekly</a>
-        <a href="monthly.html">Monthly</a>
-        <a href="summary.html">Summary</a>
-    </nav>
-<div class="breadcrumb">
-    <a href="index.html">Dashboard</a> › <span>Record Attendance</span>
-</div>
-<main>
-
-    <!-- Attendance Form -->
-    <section class="attendance-form">
-        <h2>Mark Attendance</h2>
-
-        <label for="attendance-date">Date</label>
-        <input type="date" id="attendance-date" required>
-
-        <label for="attendance-name">Member Name</label>
-        <input type="text" id="attendance-name" placeholder="Enter full name: First-name Last-name" required>
-
-        <label for="membership">Membership Status</label>
-        <select id="membership" required>
-            <option value="">-- Select Membership Status --</option>
-            <option value="member">Member</option>
-            <option value="non-member">Non-Member</option>
-        </select>
-
-        <label for="class-attended">Class Attended</label>
-        <select id="class-attended" placeholder="Choose Class" required>
-            <option value="">-- Select Class --</option>
-            <option value="ict">I.C.T Class</option>
-            <option value="catering">Catering Class</option>
-            <option value="tailoring">Tailoring / Fashion Class</option>
-            <option value="barbing">Barbing Class</option>
-            <option value="hair_makeup">Hair Making / Makeup Class</option>
-            <option value="institute">Institute Class</option>
-            <option value="family_history">Family History & Temple Preparatory Class</option>
-            <option value="mission_prep">Mission Preparatory Class</option>
-        </select>
-
-        <label for="phone-number">Phone Number</label>
-        <input type="tel" id="phone-number" placeholder="Enter student's phone number" required>
-
-        <label for="is-student-registered-for-BYU">Is student registered for BYU Pathway?</label>
-        <select id="is-student-registered-for-BYU" required>
-            <option value="">-- Select Option --</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-
-        <label for="attendance-status">Status</label>
-        <select id="attendance-status" required>
-            <option value="">-- Select Status --</option>
-            <option value="Present">Present</option>
-            <option value="Absent">Absent</option>
-            <option value="Late">Late</option>
-        </select>
-        <p id="error" class="error"></p>
-        <button onclick="saveAttendance(event)">Save Attendance</button>
-    </section>
-
-    <!-- Attendance List -->
-    <section class="attendance-list">
-        <h2>Today's Attendance</h2>
-        <ul id="attendanceList"></ul>
-        <p id="noRecordsMsg">No attendance records to show.</p>
-    </section>
-
-</main>
-
-<footer class="footer">
-    <p>
-        The Church Of Jesus Christ Of Latter-day Saints<br>
-        Ijebu-Ode Nigeria Stake — YSA Gathering Place
-    </p>
-    <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
-</footer>
-<script src="scripts/attendance.js"></script>
-<script src="scripts/auth.js"></script>
-<script>
-    protectPage();
-</script>
-<script src="scripts/app.js"></script>
-
-</body>
+    </body>
 </html>
