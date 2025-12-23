@@ -1,7 +1,9 @@
 const ADMIN_USER = "admin";
 const ADMIN_PASS = "ysaGP2025";
 
-function login() {
+function login(event) {
+    event.preventDefault();
+
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const error = document.getElementById("error");
