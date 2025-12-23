@@ -78,14 +78,14 @@ body {
     padding-bottom: 4px;
     transform: scale(1.15);
     border-radius: 9px;
-    border: border-box;
-    border: 1.5px solid #ffffff;
+    color: #ff3e03;
 }
 
 .nav a.active {
     border-bottom: 3px solid #ffffff;
     padding-bottom: 4px;
     text-decoration: none;
+    border-radius: 9px;
 }
 
 @media (max-width: 768px) {
