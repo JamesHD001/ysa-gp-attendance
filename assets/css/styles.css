@@ -222,6 +222,22 @@ li {
     color: #555;
 }
 
+.attendance-records table {
+    margin-top: 15px;
+}
+
+.attendance-records th,
+.attendance-records td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.attendance-records th {
+    background: #f1f5f9;
+    color: #1e3a8a;
+}
+
 .radio{
     margin-right: 8px;
     display: inline-block;

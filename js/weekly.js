@@ -1,81 +1,98 @@
-const fs = require('fs');
-const path = require('path');
+// ==============================
+// Weekly Attendance Logic
+// ==============================
 
-const DEFAULT_FILE = path.join(__dirname, 'weekly.json');
+const STORAGE_KEY = "weeklyAttendance";
 
-let store = {
-    weeks: {} // { "2025-01-06": { "userId": { status: "present", updatedAt: "ISO" } } }
-};
-
-function _ensureFile(filePath) {
-    const dir = path.dirname(filePath);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, JSON.stringify(store, null, 2), 'utf8');
+// Load existing records or empty array
+function getWeeklyAttendance() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
 
-function load(filePath = DEFAULT_FILE) {
-    _ensureFile(filePath);
-    try {
-        const raw = fs.readFileSync(filePath, 'utf8');
-        const data = JSON.parse(raw || '{}');
-        if (data && typeof data === 'object') {
-            store = data;
-        } else {
-            store = { weeks: {} };
-        }
-        return store;
-    } catch (err) {
-        // If parse error or read error, reinitialize file synchronously
-        store = { weeks: {} };
-        fs.writeFileSync(filePath, JSON.stringify(store, null, 2), 'utf8');
-        return store;
+// Save records back to storage
+function saveWeeklyAttendance(records) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+}
+
+// Render records below the form
+function renderAttendanceRecords() {
+    const container = document.getElementById("attendanceRecords");
+    const records = getWeeklyAttendance();
+
+    if (!records.length) {
+        container.innerHTML = "<p>No attendance records to show.</p>";
+        return;
     }
+
+    let html = `
+        <table style="width:100%; border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Class</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    records.forEach(record => {
+        html += `
+            <tr>
+                <td>${record.date}</td>
+                <td>${record.classLabel}</td>
+                <td>${record.count}</td>
+            </tr>
+        `;
+    });
+
+    html += `
+            </tbody>
+        </table>
+    `;
+
+    container.innerHTML = html;
 }
 
-function save(filePath = DEFAULT_FILE) {
-    _ensureFile(filePath);
-    fs.writeFileSync(filePath, JSON.stringify(store, null, 2), 'utf8');
-    return true;
-}
+// Handle form submission
+document.getElementById("weeklyAttendanceForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-function getAll() {
-    return store;
-}
+    const date = document.getElementById("attendance-date").value;
+    const classSelect = document.getElementById("class-name");
+    const className = classSelect.value;
+    const classLabel = classSelect.options[classSelect.selectedIndex].text;
+    const count = document.getElementById("attendance-count").value;
 
-function getWeek(weekStartISO) {
-    return store.weeks[weekStartISO] || {};
-}
+    if (!date || !className || count === "") {
+        alert("Please complete all fields.");
+        return;
+    }
 
-function setEntry(weekStartISO, userId, status) {
-    if (!weekStartISO || !userId) throw new Error('weekStartISO and userId are required');
-    if (!store.weeks[weekStartISO]) store.weeks[weekStartISO] = {};
-    store.weeks[weekStartISO][userId] = {
-        status,
-        updatedAt: new Date().toISOString()
-    };
-    return store.weeks[weekStartISO][userId];
-}
+    const records = getWeeklyAttendance();
 
-function removeEntry(weekStartISO, userId) {
-    if (!store.weeks[weekStartISO]) return false;
-    if (!store.weeks[weekStartISO][userId]) return false;
-    delete store.weeks[weekStartISO][userId];
-    if (Object.keys(store.weeks[weekStartISO]).length === 0) delete store.weeks[weekStartISO];
-    return true;
-}
+    records.push({
+        date,
+        className,
+        classLabel,
+        count: Number(count),
+        savedAt: new Date().toISOString()
+    });
 
-function clearAll() {
-    store = { weeks: {} };
-    return store;
-}
+    saveWeeklyAttendance(records);
 
-module.exports = {
-    load,
-    save,
-    getAll,
-    getWeek,
-    setEntry,
-    removeEntry,
-    clearAll,
-    DEFAULT_FILE
-};
+    // Reset form
+    document.getElementById("weeklyAttendanceForm").reset();
+
+    // Show success message
+    const msg = document.getElementById("successMsg");
+    msg.style.display = "block";
+    setTimeout(() => msg.style.display = "none", 3000);
+
+    renderAttendanceRecords();
+});
+
+// Load records on page load
+document.addEventListener("DOMContentLoaded", () => {
+    renderAttendanceRecords();
+});
