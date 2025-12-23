@@ -18,7 +18,6 @@ function login(event) {
 
     if (username === ADMIN_USER && password === ADMIN_PASS) {
         localStorage.setItem("isAdminLoggedIn", "true");
-        loginmessage.textContent = "Login successful! Redirecting...";
         window.location.href = "index.html";
     } else {
         error.textContent = "Invalid admin credentials";
