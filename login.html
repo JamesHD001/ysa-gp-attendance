@@ -28,18 +28,20 @@
         <main class="login-container">
             <h2>Login - YSA GP</h2>
 
-            <h2>Welcome Back!</h2>
-            <h3>Please enter your credentials to access the attendance dashboard.</h3>
+            <h3>Welcome Back!</h3>
+            <p>Please enter your credentials to access the attendance dashboard.</p>
             <br>
-            <label>Username</label>
-            <input type="text" id="username" placeholder="Enter username" required>
+            <form>
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter username" required>
 
-            <label>Password</label>
-            <input type="password" id="password" placeholder="Enter password" required>
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
 
-            <button onclick="login()">Login</button>
+                <button onclick="login()">Login</button>
 
-            <p id="error" class="error"></p>
+                <p id="error" class="error"></p>
+            </form>
         </main>
 
         <footer class="footer">
