@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ICT Class Attendance</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-top">
+        <div class="header-left">
+            <img src="assets/img/footer-logo.png" alt="Church Logo">
+        </div>
+        <div class="header-center">
+            <h1>
+                YSA Gathering Place<br>
+                Family History Class Attendance
+            </h1>
+        </div>
+        <div class="header-right">
+            <span>Admin</span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+</header>
+
+<nav class="nav">
+    <a href="index.html">Dashboard</a>
+    <a href="weekly.html">Weekly</a>
+    <a href="family-history.html" class="active">Family History Class</a>
+</nav>
+
+<main>
+    <section class="attendance-form">
+        <h2>Family History Class Attendance</h2>
+
+        <button id="addStudentBtn">➕ Add Student</button>
+
+        <table class="attendance-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Membership</th>
+                    <th>Ward</th>
+                    <th>BYU-PW Student?</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTableBody">
+                <!-- Rows injected by JS -->
+            </tbody>
+        </table>
+
+        <button class="save-btn">Save Attendance</button>
+    </section>
+</main>
+
+<footer class="footer">
+    <img src="assets/img/footer-logo.png" class="footer-logo">
+    <p>
+        The Church Of Jesus Christ Of Latter-day Saints <br>
+        Ijebu-Ode Nigeria Stake — YSA Gathering Place
+    </p>
+</footer>
+
+<script src="js/auth.js"></script>
+<script src="/js/family-history.js"></script>
+<!-- <script>
+    protectPage();
+</script> -->
+</body>
+</html>

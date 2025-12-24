@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>YSA GP Attendance - Classes</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header class="header">
+
+            <div class="header-top">
+
+                <div class="header-left">
+                    <img src="assets/img/footer-logo.png" alt="Church Logo" class="logo-img">
+                </div>
+
+                <div class="header-center">
+                    <h1>
+                        The Church Of Jesus Christ Of Latter-day Saints<br>
+                        Ijebu-Ode Nigeria Stake - Gathering Place
+                    </h1>
+                </div>
+
+                <div class="header-right user-info">
+                    <span>Admin</span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <a href="index.html">Dashboard</a>
+            <a href="attendance.html">Record</a>
+            <a href="weekly.html">Weekly</a>
+            <a href="monthly.html">Monthly</a>
+            <a href="summary.html">Summary</a>
+            <a href="classes.html" class="active">Classes</a>
+        </nav>
+        <div class="breadcrumb">
+            <a href="classes.html">Dashboard</a> › <span>Classes</span>
+        </div>
+        <main>
+            <section class="classes-dashboard-container">
+                <div class="classes-content">
+                    <h2>YSA Gathering Place Classes</h2>
+                    <p style="font-style: italic;">Note Instructors! Kindly pick/choose your associated class, <br>
+                        picking another class different from your original class would result in an error.</p>
+                </div>
+            </section>
+            <section class="classes-section">
+                <h3 class="classes-title">Class List</h3>
+
+                <div class="classes-wrapper">
+                    <div class="class-container">
+                        <ul class="classes-list">
+                            <li class="class-item"><p>1</p><a href="/classes/ict-class.html">ICT Class</a></li>
+                            <li class="class-item"><p>3</p><a href="/classes/barbing.html">Barbing Class</a></li>
+                            <li class="class-item"><p>5</p><a href="/classes/catering.html">Catering Class</a></li>
+                            <li class="class-item"><p>7</p><a href="/classes/tailoring.html">Tailoring Class</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="class-container">
+                        <ul class="classes-list">
+                            <li class="class-item"><p>2</p><a href="/classes/hair-makeup.html">Hair & Makeup Class</a></li>
+                            <li class="class-item"><p>4</p><a href="/classes/mission-prep.html">Mission Prep Class</a></li>
+                            <li class="class-item"><p>6</p><a href="/classes/institute.html">Institute Class</a></li>
+                            <li class="class-item"><p>8</p><a href="/classes/family-history.html">Family History & Temple Prep Class</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <p>
+                The Church Of Jesus Christ Of Latter-day Saints <br>
+                Ijebu-Ode Nigeria Stake — YSA Gathering Place
+            </p>
+            <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
+        </footer>
+
+        <script src="js/auth.js"></script>
+        <script>
+            protectPage();
+        </script>
+        <script src="js/app.js"></script>
+
+    </body>
+</html>
