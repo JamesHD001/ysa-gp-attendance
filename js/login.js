@@ -13,6 +13,7 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
         if (instructors[key].username === username && instructors[key].password === password) {
             loggedIn = true;
             alert(`Welcome ${username}! You are now logged in as the ${key} class instructor.`);
+            window.location.href = "instructors-dashboard.html";
             break;
         }
     }

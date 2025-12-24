@@ -430,6 +430,37 @@ li {
     background: #162c6b;
 }
 
+.login-section {
+    background: #4c7cff;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+}
+
+.login-section input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 6px;
+    border: none;
+}
+
+.login-section button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1e3a8a;
+    color: white;
+    cursor: pointer;
+}
+
+.login-section button:hover {
+    background-color: #163275;
+}
+
 .footer {
     background: #4c7cff;
     color: #ffffff;
