@@ -1,14 +1,6 @@
 const ADMIN_USER = "admin";
 const ADMIN_PASS = "ysaGP2025";
 
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("loginForm");
-
-    if (form) {
-        form.addEventListener("submit", login);
-    }
-});
-
 function login(event) {
     event.preventDefault();
 
