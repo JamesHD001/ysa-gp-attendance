@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instructor Login - YSA GP</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-top">
+        <div class="header-left">
+            <img src="assets/img/footer-logo.png" alt="Church Logo">
+        </div>
+        <div class="header-center">
+            <h1>
+                The Church Of Jesus Christ Of Latter-day Saints<br>
+                Ijebu-Ode Nigeria Stake - Gathering Place
+            </h1>
+        </div>
+    </div>
+</header>
+
+<main class="login-container">
+    <h2 class="welcome-msg">Welcome Back!</h2>
+    <p class="welcome-p">Please enter your credentials to access the attendance dashboard.</p>
+
+    <!-- IMPORTANT: onsubmit -->
+    <form id="loginForm">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <p id="error" class="error"></p>
+        <p id="login-message"></p>
+        <button type="button" onclick="login(event)">Login</button>
+    </form>
+    
+
+</main>
+
+<footer class="footer">
+    <p>
+        The Church Of Jesus Christ Of Latter-day Saints <br>
+        Ijebu-Ode Nigeria Stake — YSA Gathering Place
+    </p>
+    <img src="assets/img/footer-logo.png" class="footer-logo">
+</footer>
+<script src="js/instructors.js"></script>
+<script src="js/login.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

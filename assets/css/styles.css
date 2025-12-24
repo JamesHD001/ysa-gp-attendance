@@ -30,7 +30,7 @@ body {
 .header-center {
     text-align: center;
     flex: 1;
-    padding-left: 55px;
+    /* padding-left: 45px; */
 }
 
 .header-center h1 {
