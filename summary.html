@@ -10,9 +10,11 @@
     </head>
     <body>
         <header class="header">
+
             <div class="header-top">
+
                 <div class="header-left">
-                    <img src="assets/img/footer-logo.png" alt="Church Logo">
+                    <img src="assets/img/footer-logo.png" alt="Church Logo" class="logo-img">
                 </div>
 
                 <div class="header-center">
@@ -22,10 +24,15 @@
                     </h1>
                 </div>
 
-                <div class="header-right">
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i data-lucide="menu"></i>
+                </button>
+
+                <div class="header-right user-info">
                     <span>Admin</span>
                     <button class="logout-btn" onclick="logout()">Logout</button>
                 </div>
+
             </div>
         </header>
 
@@ -34,12 +41,13 @@
             <a href="attendance.html">Record</a>
             <a href="weekly.html">Weekly</a>
             <a href="monthly.html">Monthly</a>
-            <a href="summary.html" class="active">Attendance Summary</a>
+            <a href="summary.html" class="active">Summary</a>
             <a href="classes.html">Classes</a>
+            <a href="admin-curriculum.html">Curriculums</a>
         </nav>
-
+        <div class="nav-backdrop"></div>
         <div class="breadcrumb">
-            <a href="index.html">Dashboard</a> › <span>Attendance Summary</span>
+            <a href="index.html">Dashboard</a> › <span>Home</span>
         </div>
 
         <main>
@@ -47,10 +55,18 @@
             <p id="summaryText"></p>
             <p id="attendanceSummary">Total Attendance: <span id="totalAttendance">No attendance report to show.</span></p>
         </main>
+        <footer class="footer">
+            <p>
+                The Church Of Jesus Christ Of Latter-day Saints <br>
+                Ijebu-Ode Nigeria Stake — YSA Gathering Place
+            </p>
+            <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
+        </footer>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script src="js/app.js"></script>
         <script src="js/auth.js"></script>
         <script>
             protectPage();
         </script>
-        <script src="js/app.js"></script>
     </body>
 </html>

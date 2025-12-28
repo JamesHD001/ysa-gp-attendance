@@ -88,7 +88,45 @@
             </p>
             <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
         </footer>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.nav');
+            const backdrop = document.querySelector('.nav-backdrop');
+            const navLinks = document.querySelectorAll('.nav a');
 
+            function closeMenu() {
+                nav.classList.remove('active');
+                backdrop.classList.remove('active');
+
+                const icon = menuToggle.querySelector('svg');
+                icon.setAttribute('data-lucide', 'menu');
+                icon.style.transform = 'rotate(0deg)';
+                lucide.createIcons();
+            }
+
+            menuToggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('active');
+                backdrop.classList.toggle('active');
+
+                const icon = menuToggle.querySelector('svg');
+                icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+
+                lucide.createIcons();
+            });
+
+            // Close when clicking backdrop
+            backdrop.addEventListener('click', closeMenu);
+
+            // Auto-close when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // Init icons
+            lucide.createIcons();
+        </script>
         <script src="js/auth.js"></script>
         <!-- <script>
             protectPage();

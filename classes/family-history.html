@@ -9,21 +9,31 @@
 
 <header class="header">
     <div class="header-top">
+
         <div class="header-left">
-            <img src="assets/img/footer-logo.png" alt="Church Logo">
+            <img src="/assets/img/footer-logo.png" alt="Church Logo">
         </div>
+
         <div class="header-center">
             <h1>
                 The Church Of Jesus Christ Of Latter-day Saints<br>
                 Ijebu-Ode Nigeria Stake - Gathering Place
             </h1>
         </div>
+
+        <!-- 🔥 NEW: Lucide menu toggle -->
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <i data-lucide="menu"></i>
+        </button>
+
         <div class="header-right">
             <span id="loggedInUser"></span>
-            <button class="logout-btn" onclick="logout()">Logout</button>
+            <button class="logout-btn" onclick="instructorLogout()">Logout</button>
         </div>
+
     </div>
 </header>
+
 
 <nav class="nav">
     <a href="../instructors-dashboard.html">Dashboard</a>
@@ -31,7 +41,7 @@
     <a href="family-history.html" class="active">Family History Class</a>
     <a href="../curriculum.html">Curriculum</a>
 </nav>
-
+<div class="nav-backdrop"></div>
 <main>
     <section class="attendance-form">
         <h2>Family History Class Attendance</h2>
@@ -67,8 +77,9 @@
         Ijebu-Ode Nigeria Stake — YSA Gathering Place
     </p>
 </footer>
-
-<script src="js/auth.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="/js/app.js"></script>
+<script src="/js/auth.js"></script>
 <script src="/js/family-history.js"></script>
 <script src="/js/role-handler.js"></script>
 <script>

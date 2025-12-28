@@ -133,3 +133,41 @@ window.addEventListener("DOMContentLoaded", () => {
 
     loadTodayAttendance();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    const backdrop = document.querySelector('.nav-backdrop');
+    const navLinks = document.querySelectorAll('.nav a');
+
+    if (!menuToggle || !nav || !backdrop) return;
+
+    function closeMenu() {
+        nav.classList.remove('active');
+        backdrop.classList.remove('active');
+
+        const icon = menuToggle.querySelector('svg');
+        icon.setAttribute('data-lucide', 'menu');
+        icon.style.transform = 'rotate(0deg)';
+        lucide.createIcons();
+    }
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('active');
+        backdrop.classList.toggle('active');
+
+        const icon = menuToggle.querySelector('svg');
+        icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+        icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+
+        lucide.createIcons();
+    });
+
+    backdrop.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    lucide.createIcons();
+});
