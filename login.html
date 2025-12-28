@@ -26,7 +26,6 @@
     <h2 class="welcome-msg">Welcome Back!</h2>
     <p class="welcome-p">Please enter your credentials to access the attendance dashboard.</p>
 
-    <!-- IMPORTANT: onsubmit -->
     <form id="loginForm">
         <label>Username</label>
         <input type="text" id="username" placeholder="Enter your username" required>
@@ -36,6 +35,8 @@
 
         <p id="error" class="error"></p>
         <button type="button" onclick="login(event)">Login</button>
+        <p class="inst-login" style="text-align: center; padding-top: 20px;">Not an Admin? Go to:<br></p>
+        <button type="button" onclick="location.href='instructors-login.html'">Instructor Login Page</button>
     </form>
     
 
@@ -48,7 +49,6 @@
     </p>
     <img src="assets/img/footer-logo.png" class="footer-logo">
 </footer>
-
 <script src="js/auth.js"></script>
 </body>
 </html>

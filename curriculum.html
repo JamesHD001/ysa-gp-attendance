@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Barbing Class Attendance</title>
+    <title>Curriculum</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-
 <header class="header">
     <div class="header-top">
         <div class="header-left">
@@ -24,42 +23,22 @@
         </div>
     </div>
 </header>
-
 <nav class="nav">
-    <a href="../instructors-dashboard.html">Dashboard</a>
+    <a href="../class-dashboard.html">Dashboard</a>
     <a href="../instructors-summary.html">Summary</a>
-    <a href="/classes/barbing.html" class="active">Barbing Class</a>
-    <a href="../curriculum.html">Curriculum</a>
+    <a href="/curriculum.html" class="active">Curriculum</a>
+    <a href="../classes/ict-class.html">Mark</a>
 </nav>
-
+<div class="breadcrumb">
+    <a href="class-dashboard.html">Dashboard</a> › <span>Curriculum</span>
+</div>
 <main>
-    <section class="attendance-form">
-        <h2>Barbing Class Attendance</h2>
-
-        <button id="addStudentBtn">➕ Add Student</button>
-
-        <table class="attendance-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Phone Number</th>
-                    <th>Membership</th>
-                    <th>Ward</th>
-                    <th>BYU-PW Student?</th>
-                    <th>Gender</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody id="attendanceTableBody">
-                <!-- Rows injected by JS -->
-            </tbody>
-        </table>
-
-        <button class="save-btn">Save Attendance</button>
+    <section class="curriculum-content">
+        <h2>Curriculum Overview</h2>
+        <p>Welcome to the curriculum section. Here you can find information about the courses offered at the YSA Gathering Place.<br></p>
+        <p style="font-size: larger; font-weight: bold; font-family: Arial, sans-serif; font-style:italic">This Feature is Still under development.</p>
     </section>
 </main>
-
 <footer class="footer">
     <img src="/assets/img/footer-logo.png" class="footer-logo">
     <p>
@@ -69,11 +48,10 @@
 </footer>
 
 <script src="/js/auth.js"></script>
-<script src="/js/barbing.js"></script>
 <script src="/js/role-handler.js"></script>
-<script>
+<!-- <script>
     protectClassPage("barbing");
     hideAdminOnlyElements();
-</script>
+</script> -->
 </body>
 </html>

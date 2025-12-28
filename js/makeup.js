@@ -1,7 +1,7 @@
 const tableBody = document.getElementById("attendanceTableBody");
 const addStudentBtn = document.getElementById("addStudentBtn");
 
-let students = JSON.parse(localStorage.getItem("familyHistoryStudents")) || [];
+let students = JSON.parse(localStorage.getItem("makeupStudents")) || [];
 
 function renderTable() {
     tableBody.innerHTML = "";
@@ -79,7 +79,7 @@ document.querySelector(".save-btn").addEventListener("click", () => {
         };
     });
 
-    localStorage.setItem("familyHistoryStudents", JSON.stringify(students));
+    localStorage.setItem("makeupStudents", JSON.stringify(students));
     alert("Attendance saved successfully");
 });
 

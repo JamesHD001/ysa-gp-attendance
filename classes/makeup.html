@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ICT Class Attendance</title>
+    <title>Makeup Class Attendance</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -10,7 +10,7 @@
 <header class="header">
     <div class="header-top">
         <div class="header-left">
-            <img src="/assets/img/footer-logo.png" alt="Church Logo">
+            <img src="assets/img/footer-logo.png" alt="Church Logo">
         </div>
         <div class="header-center">
             <h1>
@@ -20,22 +20,21 @@
         </div>
         <div class="header-right">
             <span id="loggedInUser"></span>
-            <button class="logout-btn" onclick="instructorLogout()">Logout</button>
+            <button class="logout-btn" onclick="logout()">Logout</button>
         </div>
     </div>
 </header>
 
 <nav class="nav">
-    <a href="../class-dashboard.html">Dashboard</a>
+    <a href="../instructors-dashboard.html">Dashboard</a>
     <a href="../instructors-summary.html">Summary</a>
+    <a href="makeup.html" class="active">Makeup Class</a>
     <a href="../curriculum.html">Curriculum</a>
-    <a href="ict-class.html" class="active">Mark Attendance</a>
-
 </nav>
 
 <main>
     <section class="attendance-form">
-        <h2>ICT Class Attendance</h2>
+        <h2>Makeup Class Attendance</h2>
 
         <button id="addStudentBtn">➕ Add Student</button>
 
@@ -62,20 +61,19 @@
 </main>
 
 <footer class="footer">
-    <img src="/assets/img/footer-logo.png" class="footer-logo">
+    <img src="assets/img/footer-logo.png" class="footer-logo">
     <p>
         The Church Of Jesus Christ Of Latter-day Saints <br>
         Ijebu-Ode Nigeria Stake — YSA Gathering Place
     </p>
 </footer>
 
-<!-- <script src="/js/auth.js"></script> -->
- <script src="/js/login.js"></script>
-<script src="/js/ict.js"></script>
+<script src="js/auth.js"></script>
+<script src="/js/makeup.js"></script>
 <script src="/js/role-handler.js"></script>
 <script>
+    protectClassPage("makeup");
     hideAdminOnlyElements();
 </script>
-
 </body>
 </html>

@@ -2,35 +2,39 @@
 
 const instructors = {
     ict: {
-        username: "ict_instructor",
-        password: "ictGP2026"
+        "instructor-username": "ICTinstructor",
+        "instructor-password": "ictGP2026"
     },
     catering: {
-        username: "catering_instructor",
-        password: "cateringGP2026"
+        "instructor-username": "Cateringinstructor",
+        "instructor-password": "cateringGP2026"
     },
     barbing: {
-        username: "barbing_instructor",
-        password: "barbingGP2026"
+        "instructor-username": "Barbinginstructor",
+        "instructor-password": "barbingGP2026"
     },
     tailoring: {
-        username: "tailoring_instructor",
-        password: "tailoringGP2026"
+        "instructor-username": "Tailoringinstructor",
+        "instructor-password": "tailoringGP2026"
     },
     hairMakeup: {
-        username: "hair_makeup_instructor",
-        password: "hairmakeupGP2026"
+        "instructor-username": "MKinstructor",
+        "instructor-password": "hairmakeupGP2026"
     },
     institute: {
-        username: "institute_instructor",
-        password: "instituteGP2026"
+        "instructor-username": "Instituteinstructor",
+        "instructor-password": "instituteGP2026"
     },
     missionPrep: {
-        username: "mission_prep_instructor",
-        password: "missionprepGP2026"
+        "instructor-username": "MPCinstructor",
+        "instructor-password": "missionprepGP2026"
     },
     familyHistory: {
-        username: "family_history_instructor",
-        password: "familyhistoryGP2026"
+        "instructor-username": "FHinstructor",
+        "instructor-password": "familyhistoryGP2026"
+    },
+    leaderAccess: {
+        "instructor-username": "Leaderaccess",
+        "instructor-password": "ijebuodeGP2026"
     }
 };

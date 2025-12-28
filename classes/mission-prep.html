@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ICT Class Attendance</title>
+    <title>Mission Prep Class Attendance</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -14,21 +14,22 @@
         </div>
         <div class="header-center">
             <h1>
-                YSA Gathering Place<br>
-                Mission Prep Class Attendance
+                The Church Of Jesus Christ Of Latter-day Saints<br>
+                Ijebu-Ode Nigeria Stake - Gathering Place
             </h1>
         </div>
         <div class="header-right">
-            <span>Admin</span>
+            <span id="loggedInUser"></span>
             <button class="logout-btn" onclick="logout()">Logout</button>
         </div>
     </div>
 </header>
 
 <nav class="nav">
-    <a href="index.html">Dashboard</a>
-    <a href="weekly.html">Weekly</a>
+    <a href="../instructors-dashboard.html">Dashboard</a>
+    <a href="../instructors-summary.html">Summary</a>
     <a href="mission-prep.html" class="active">Mission Prep Class</a>
+    <a href="../curriculum.html">Curriculum</a>
 </nav>
 
 <main>
@@ -46,6 +47,7 @@
                     <th>Membership</th>
                     <th>Ward</th>
                     <th>BYU-PW Student?</th>
+                    <th>Gender</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -68,8 +70,11 @@
 
 <script src="js/auth.js"></script>
 <script src="/js/mission-prep.js"></script>
-<!-- <script>
-    protectPage();
-</script> -->
+<script src="/js/role-handler.js"></script>
+<script>
+    protectClassPage("mission-prep");
+    hideAdminOnlyElements();
+</script>
+
 </body>
 </html>

@@ -29,6 +29,13 @@ function renderTable() {
                 </select>
             </td>
             <td>
+                <select>
+                    <option ${student.gender === "--Select Gender--" ? "selected" : ""}>--Select Gender--</option>
+                    <option ${student.gender === "Male" ? "selected" : ""}>Male</option>
+                    <option ${student.gender === "Female" ? "selected" : ""}>Female</option>
+                </select>
+            </td>
+            <td>
                 <select class="status-select">
                     <option ${student.status === "--Select Status--" ? "selected" : ""}>--Select Status--</option>
                     <option ${student.status === "Present" ? "selected" : ""}>Present</option>
@@ -48,6 +55,7 @@ addStudentBtn.addEventListener("click", () => {
         membership: "--Select Membership--",
         ward: "Ward Name Or Location",
         byu: "--Select Status--",
+        gender: "--Select Gender--",
         status: "--Select Status--"
     });
 
@@ -66,7 +74,8 @@ document.querySelector(".save-btn").addEventListener("click", () => {
             membership: cells[3].querySelector("select").value,
             ward: cells[4].innerText.trim(),
             byu: cells[5].querySelector("select").value,
-            status: cells[6].querySelector("select").value
+            gender: cells[6].querySelector("select").value,
+            status: cells[7].querySelector("select").value
         };
     });
 
