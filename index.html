@@ -14,27 +14,33 @@
 
 <body>
 
-<header class="header">
+    <header class="header">
 
-    <div class="header-top">
+        <div class="header-top">
 
-        <div class="header-left">
-            <img src="assets/img/footer-logo.png" alt="Church Logo" class="logo-img">
+            <div class="header-left">
+                <img src="assets/img/footer-logo.png" alt="Church Logo" class="logo-img">
+            </div>
+
+            <div class="header-center">
+                <h1>
+                    The Church Of Jesus Christ Of Latter-day Saints<br>
+                    Ijebu-Ode Nigeria Stake - Gathering Place
+                </h1>
+            </div>
+
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="header-right user-info">
+                <span>Admin</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+
         </div>
+    </header>
 
-        <div class="header-center">
-            <h1>
-                The Church Of Jesus Christ Of Latter-day Saints<br>
-                Ijebu-Ode Nigeria Stake - Gathering Place
-            </h1>
-        </div>
-
-        <div class="header-right user-info">
-            <span>Admin</span>
-            <button class="logout-btn" onclick="logout()">Logout</button>
-        </div>
-    </div>
-</header>
     <nav class="nav">
         <a href="index.html" class="active">Dashboard</a>
         <a href="attendance.html">Record</a>
@@ -44,6 +50,7 @@
         <a href="classes.html">Classes</a>
         <a href="admin-curriculum.html">Curriculums</a>
     </nav>
+    <div class="nav-backdrop"></div>
     <div class="breadcrumb">
         <a href="index.html">Dashboard</a> › <span>Home</span>
     </div>
@@ -97,6 +104,45 @@
         </p>
         <img src="assets/img/footer-logo.png" alt="Footer Logo" class="footer-logo">
     </footer>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+        const backdrop = document.querySelector('.nav-backdrop');
+        const navLinks = document.querySelectorAll('.nav a');
+
+        function closeMenu() {
+            nav.classList.remove('active');
+            backdrop.classList.remove('active');
+
+            const icon = menuToggle.querySelector('svg');
+            icon.setAttribute('data-lucide', 'menu');
+            icon.style.transform = 'rotate(0deg)';
+            lucide.createIcons();
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('active');
+            backdrop.classList.toggle('active');
+
+            const icon = menuToggle.querySelector('svg');
+            icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+            icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+
+            lucide.createIcons();
+        });
+
+        // Close when clicking backdrop
+        backdrop.addEventListener('click', closeMenu);
+
+        // Auto-close when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Init icons
+        lucide.createIcons();
+    </script>
 
     <script src="js/auth.js"></script>
     <script>
